@@ -5,7 +5,6 @@ import gulp from 'gulp';
 import del from 'del';
 import runSequence from 'run-sequence';
 import gulpLoadPlugins from 'gulp-load-plugins';
-import {output as pagespeed} from 'psi';
 import pkg from './package.json';
 import browserify from 'gulp-browserify';
 import babelify from 'babelify';
@@ -58,19 +57,20 @@ gulp.task('styles', () => {
 
   return gulp.src([
     'app/styles/*.scss',
+    'app/styles/*.css'
   ])
     .pipe($.newer('.tmp/styles'))
     .pipe($.sourcemaps.init())
     .pipe($.sass({
       precision: 10
     }).on('error', $.sass.logError))
-    .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
+    // .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
     .pipe(gulp.dest('.tmp/styles'))
     // Concatenate and minify styles
-    .pipe($.if('*.css', $.cssnano()))
+    // .pipe($.if('*.css', $.cssnano()))
     .pipe($.size({title: 'styles'}))
-    .pipe($.sourcemaps.write('./'))
-    .pipe(gulp.dest('app/styles'));
+    .pipe($.sourcemaps.write('.'))
+    .pipe(gulp.dest('dist/styles'));
 });
 
 gulp.task('scripts', () =>
@@ -78,37 +78,12 @@ gulp.task('scripts', () =>
       .pipe(browserify({
         transform: ['babelify']
       }))
-      .pipe(gulp.dest('app/build/scripts'))
-);
-
-gulp.task('react', () =>
-  gulp.src('app/scripts/app.js')
-    .pipe($.babel())
-    .pipe(browserify({
-      insertGlobals : true,
-      debug : !gulp.env.production
-     }))
-    .pipe(gulp.dest('app/build/scripts'))
+      .pipe(gulp.dest('dist/scripts'))
 );
 
 // Scan your HTML for assets & optimize them
 gulp.task('html', () => {
   return gulp.src('app/**/*.html')
-    .pipe($.useref({searchPath: '{.tmp,app}'}))
-    // Remove any unused CSS
-    .pipe($.if('*.css', $.uncss({
-      html: [
-        'app/index.html'
-      ],
-      // CSS Selectors for UnCSS to ignore
-      ignore: []
-    })))
-
-    // Concatenate and minify styles
-    // In case you are still using useref build blocks
-    .pipe($.if('*.css', $.cssnano()))
-
-    // Minify any HTML
     .pipe($.if('*.html', $.htmlmin({
       removeComments: true,
       collapseWhitespace: true,
@@ -122,105 +97,25 @@ gulp.task('html', () => {
     })))
     // Output files
     .pipe($.if('*.html', $.size({title: 'html', showFiles: true})))
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('.'));
 });
 
 // Clean output directory
 gulp.task('clean', () => del(['.tmp', 'dist/*', '!dist/.git'], {dot: true}));
 
 // Watch files for changes & reload
-gulp.task('watch', ['scripts', 'styles'], () => {
-/*  browserSync({
-    notify: false,
-    // Customize the Browsersync console logging prefix
-    logPrefix: 'WSK',
-    // Allow scroll syncing across breakpoints
-    scrollElementMapping: ['main', '.mdl-layout'],
-    // Run as an https by uncommenting 'https: true'
-    // Note: this uses an unsigned certificate which on first access
-    //       will present a certificate warning in the browser.
-    // https: true,
-    server: ['.tmp', 'app'],
-    port: 3000
-  });
-*/
-//  gulp.watch(['app/**/*.html'], reload);
+gulp.task('watch', ['html','scripts', 'styles'], () => {
+  gulp.watch(['app/**/*.html'], ['html']);
   gulp.watch(['app/styles/**/*.{scss,css}'], ['styles']);
-  gulp.watch(['app/scripts/*.js', 'app/scripts/*.jsx'], ['scripts']);
-//  gulp.watch(['app/images/**/*'], reload);
+  gulp.watch(['app/scripts/**/*.js', 'app/scripts/**/*.jsx'], ['scripts']);
 });
-
-// Build and serve the output from the dist build
-gulp.task('serve:dist', ['default'], () =>
-  browserSync({
-    notify: false,
-    logPrefix: 'WSK',
-    // Allow scroll syncing across breakpoints
-    scrollElementMapping: ['main', '.mdl-layout'],
-    // Run as an https by uncommenting 'https: true'
-    // Note: this uses an unsigned certificate which on first access
-    //       will present a certificate warning in the browser.
-    // https: true,
-    server: 'dist',
-    port: 3001
-  })
-);
 
 // Build production files, the default task
 gulp.task('default', ['clean'], cb =>
   runSequence(
     'styles',
-    ['html', 'scripts', 'images'],
+    ['html', 'scripts'],
     cb
   )
 );
 
-// Run PageSpeed Insights
-gulp.task('pagespeed', cb =>
-  // Update the below URL to the public URL of your site
-  pagespeed('example.com', {
-    strategy: 'mobile'
-    // By default we use the PageSpeed Insights free (no API key) tier.
-    // Use a Google Developer API key if you have one: http://goo.gl/RkN0vE
-    // key: 'YOUR_API_KEY'
-  }, cb)
-);
-
-// Copy over the scripts that are used in importScripts as part of the generate-service-worker task.
-gulp.task('copy-sw-scripts', () => {
-  return gulp.src(['node_modules/sw-toolbox/sw-toolbox.js', 'app/scripts/sw/runtime-caching.js'])
-    .pipe(gulp.dest('dist/scripts/sw'));
-});
-
-// See http://www.html5rocks.com/en/tutorials/service-worker/introduction/ for
-// an in-depth explanation of what service workers are and why you should care.
-// Generate a service worker file that will provide offline functionality for
-// local resources. This should only be done for the 'dist' directory, to allow
-// live reload to work as expected when serving from the 'app' directory.
-gulp.task('generate-service-worker', ['copy-sw-scripts'], () => {
-  const rootDir = 'dist';
-  const filepath = path.join(rootDir, 'service-worker.js');
-
-  return swPrecache.write(filepath, {
-    // Used to avoid cache conflicts when serving on localhost.
-    cacheId: pkg.name || 'web-starter-kit',
-    // sw-toolbox.js needs to be listed first. It sets up methods used in runtime-caching.js.
-    importScripts: [
-      'scripts/sw/sw-toolbox.js',
-      'scripts/sw/runtime-caching.js'
-    ],
-    staticFileGlobs: [
-      // Add/remove glob patterns to match your directory setup.
-      `${rootDir}/images/**/*`,
-      `${rootDir}/scripts/**/*.js`,
-      `${rootDir}/styles/**/*.css`,
-      `${rootDir}/*.{html,json}`
-    ],
-    // Translates a static file path to the relative URL that it's served from.
-    stripPrefix: path.join(rootDir, path.sep)
-  });
-});
-
-// Load custom tasks from the `tasks` directory
-// Run: `npm install --save-dev require-dir` from the command-line
-// try { require('require-dir')('tasks'); } catch (err) { console.error(err); }

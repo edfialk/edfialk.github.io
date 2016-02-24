@@ -1,0 +1,57 @@
+.onlyprint {
+	display: none;
+}
+
+@media print {
+	a[href]:after {
+		content: "";
+	}
+	.onlyprint {
+		display: block;
+	}
+	html, body, .mdl-layout__container {
+		height: 260mm;
+		width: 210mm;
+	}
+	.noprint {
+		display: none!important;
+	}
+	.content {
+		size: 8.5in 11in;
+	}
+	.content .mdl-grid {
+		padding: 0;
+	}
+	* {
+		padding: 0;
+		margin: 0;
+	}
+	ul {
+		padding-left: 20px;
+	}
+	.header-contact i {
+		display: none;
+	}
+	.header-contact a {
+		display: block;
+	}
+	.header-contact a:after {
+		content: attr(href);
+		display: block;
+	}
+	.profile {
+	    margin-right: 0;
+	    top: 15px;
+	    right: 60px;
+	    width: 125px;
+	}
+	.mdl-typography--display-2 {
+		font-size: 36px;
+	}
+	.mdl-typography--headline {
+		font-size: 28px;
+	}
+	.mdl-typography--title {
+		font-size: 22px;
+	}
+}

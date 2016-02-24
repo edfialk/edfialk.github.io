@@ -1,41 +1,49 @@
+@import 'animate.css';
+
+$blue: #1496bb;
+$linkColor: rgba(20,150,187,1);
+$textColor: rgba(0,0,0,0.87);
+
 html, body {
   font-family: 'Roboto', 'Helvetica', sans-serif;
   margin: 0;
   padding: 0;
 }
+header {
+  position: relative;
+}
+header p {
+  margin-top: 16px;
+}
+a {
+  color: $blue;
+  text-decoration: none;
+}
 .mdl-typography--text-large {
   font-size: 16px;
 }
-.content .mdl-grid {
-  padding: 10px 40px;
+.clickable, a {
+  cursor: pointer;
+  &:hover {
+    color: $linkColor;
+  }
 }
-i {
-  vertical-align: middle;
+.center-text {
+  text-align: center;
 }
-.header-contact {
-  margin-top: 28px;
-}
-.header-contact--inner {
+
+.content {
   width: 100%;
-  display: flex;
+  max-width: 1024px;
+  margin: 0 auto;
+  position: relative;
 }
-.header-contact a {
-  flex: 1;
-}
-.header-contact .fa {
-  font-size: 40px;
-  color: #424242 !important;
-}
-.content .in-progress {
-  list-style-type: circle;
+.content .mdl-grid {
+  padding: 10px;
 }
 .content ul {
   margin: 0;
 }
-.ul-horizontal li {
-  float: Left;
-}
-
 
 footer .fa {
   width: 1.28571429em;
@@ -46,3 +54,26 @@ footer .fa {
 footer li {
   padding: 5px;
 }
+
+.highlight {
+  color: $linkColor!important;
+}
+.fadeToBlack {
+  animation: fadeToBlack 2s;
+}
+@keyframes fadeToBlack {
+  0% {
+    color: $linkColor;
+  }
+  100% {
+    color: $textColor;
+  }
+}
+
+@import 'animations.scss';
+@import 'index.scss';
+@import 'phone.scss';
+@import 'tablet.scss';
+@import 'desktop.scss';
+@import 'print.scss';
+@import 'components/project.scss';

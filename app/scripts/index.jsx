@@ -66,12 +66,12 @@ module.exports = React.createClass({
 	          </div>
 	          <div className="header-contact animated" style={ this.state.didAnimation ? {opacity: 1} : {} }>
 	            <div className="header-contact--inner noprint">
-	              <a href="https://www.facebook.com/edfialk"><i className="fa fa-fw fa-facebook" /></a>
-	              <a href="https://plus.google.com/u/0/115272869343292818360"><i className="fa fa-fw fa-google-plus" /></a>
-	              <span className="clickable noprint" onClick={window.print}><i className="fa fa-fw fa-print animated" /></span>
 	              <a href="https://www.linkedin.com/in/ed-fialkowski-06b508a2"><i className="fa fa-fw fa-linkedin" /></a>
 	              <a href="https://github.com/edfialk"><i className="fa fa-fw fa-github" /></a>
 	              <a href="https://bitbucket.org/edfialk/"><i className="fa fa-fw fa-bitbucket" /></a>
+	              <a href="https://www.facebook.com/edfialk"><i className="fa fa-fw fa-facebook" /></a>
+	              <a href="https://plus.google.com/u/0/115272869343292818360"><i className="fa fa-fw fa-google-plus" /></a>
+	              <span className="clickable noprint" onClick={window.print}><i className="fa fa-fw fa-print animated" /></span>
 	            </div>
 	          </div>
 	        </header>

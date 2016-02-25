@@ -254,12 +254,12 @@ module.exports = React.createClass({ displayName: 'exports',
 
 			React.createElement('div', { className: 'header-contact animated', style: this.state.didAnimation ? { opacity: 1 } : {} }, 
 			React.createElement('div', { className: 'header-contact--inner noprint' }, 
-			React.createElement('a', { href: 'https://www.facebook.com/edfialk' }, React.createElement('i', { className: 'fa fa-fw fa-facebook' })), 
-			React.createElement('a', { href: 'https://plus.google.com/u/0/115272869343292818360' }, React.createElement('i', { className: 'fa fa-fw fa-google-plus' })), 
-			React.createElement('span', { className: 'clickable noprint', onClick: window.print }, React.createElement('i', { className: 'fa fa-fw fa-print animated' })), 
 			React.createElement('a', { href: 'https://www.linkedin.com/in/ed-fialkowski-06b508a2' }, React.createElement('i', { className: 'fa fa-fw fa-linkedin' })), 
 			React.createElement('a', { href: 'https://github.com/edfialk' }, React.createElement('i', { className: 'fa fa-fw fa-github' })), 
-			React.createElement('a', { href: 'https://bitbucket.org/edfialk/' }, React.createElement('i', { className: 'fa fa-fw fa-bitbucket' }))))), 
+			React.createElement('a', { href: 'https://bitbucket.org/edfialk/' }, React.createElement('i', { className: 'fa fa-fw fa-bitbucket' })), 
+			React.createElement('a', { href: 'https://www.facebook.com/edfialk' }, React.createElement('i', { className: 'fa fa-fw fa-facebook' })), 
+			React.createElement('a', { href: 'https://plus.google.com/u/0/115272869343292818360' }, React.createElement('i', { className: 'fa fa-fw fa-google-plus' })), 
+			React.createElement('span', { className: 'clickable noprint', onClick: window.print }, React.createElement('i', { className: 'fa fa-fw fa-print animated' }))))), 
 
 
 

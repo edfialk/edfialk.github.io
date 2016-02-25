@@ -56,7 +56,16 @@ module.exports = React.createClass({ displayName: 'exports',
 
 
 	text: function text() {
-		if (!this.props.text) return '';
+		if (this.props.title && !this.props.text) {
+			return (
+				React.createElement('div', { className: 'mdl-cell mdl-cell--12-col center-text' }, 
+				React.createElement('h5', null, this.props.title)));}
+
+
+
+		if (!this.props.text) {
+			return '';}
+
 		var textClasses = cx({ 
 			'mdl-cell mdl-cell--6-col': this.props.image, 
 			'mdl-cell mdl-cell--12-col center-text': !this.props.image });
@@ -320,24 +329,19 @@ module.exports = React.createClass({ displayName: 'exports',
 				description: 'tools and guidance for remotely sensed atmospheric data', 
 				github: 'https://github.com/edfialk/ACP' }), 
 
-			React.createElement(ProjectSection, { title: 'Data Table', image: '/images/acp/home-monitor.png', 
-				text: 'I wanted a better news reader. I wanted to read about topics, and view each topic in a custom way. My tech blogs just need headlines and summaries,\r my design blogs need a thumbnail, and my image sites don\'t even need a title, but they all need a way to consume, save, and publish content quickly.' }), 
+			React.createElement(ProjectSection, { title: 'Goal', image: '/images/acp/home-monitor.png', 
+				text: 'To foster interoperability and application of atmospheric composition data, information, and services worldwide. To help identify the unique\r requirements and shared features of ACC and GEOSS users to provide a value-added and complementary capability.' }), 
 
 
-			React.createElement(ProjectSection, { imageLeft: true, title: 'Contextual Metadata', image: '/images/acp/datatable-monitor.png', 
-				text: 'When multiple sites write about a major event, it tends to clogs up the view, usually with repeated information.\r Using <a href=\'https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient\'>Dice coefficient</a>, I accurately <em>(usually)</em> group\r related articles into one featured post, allowing easy viewing of multiple sources for a single event.' }), 
-
+			React.createElement(ProjectSection, { imageLeft: true, title: 'Data Table', image: '/images/acp/datatable-monitor.png', 
+				text: 'The group was happy with google spreadsheets for collaboration on public atmospheric data services, but needed a new solution for displaying the data.\r I created a drupal module for converting a google spreadsheet to html table. A common set of filters were added, with dynamic filters read live from the spreadsheet.' }), 
 
 
 			React.createElement(ProjectSection, { title: 'Contextual Metadata', image: '/images/acp/metadata-monitor.png', 
-				text: '<center>-Lapo Elkann</center><br/><p>Full customization of each Kloj with live preview.\r Click behavior, grouping, sorting, filtering, visible pieces and more.\r List, grid, brick, and magazine templates with common color schemes and behaviors as easy to choose themes.\r Many options also available when reading any kloj.</p>' }), 
+				text: 'A tool for presenting the user with articles and news items relevant to a specific pollutant, sensor, or method. A full drupal module allowing\r new metadata pages or blocks to be created, structured, and configured to provide a default query. Data provided by George Mason University.' }), 
 
 
-
-
-			React.createElement(ProjectSection, { imageLeft: true, title: 'Stack', image: '/images/kloj/kloj-mockup.jpg', 
-				text: '<center>Laravel, Backbone Marionnette, SASS, Bootstrap.</center>' }), 
-
+			React.createElement(ProjectSection, { imageLeft: true, title: 'Powered by Drupal 7', image: '/images/drupal.png', text: '' }), 
 			React.createElement(Footer, null)));} });
 
 },{"../components/project/header.jsx":1,"../components/project/section.jsx":3,"../footer.jsx":5,"react":221,"react-router":83}],8:[function(require,module,exports){

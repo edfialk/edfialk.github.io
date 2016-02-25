@@ -20,7 +20,16 @@ module.exports = React.createClass({
 		)
 	},
 	text() {
-		if (!this.props.text) return '';
+		if (this.props.title && !this.props.text){
+			return (
+				<div className="mdl-cell mdl-cell--12-col center-text">
+					<h5>{this.props.title}</h5>
+				</div>
+			);
+		}
+		if (!this.props.text){
+			return '';
+		}
 		var textClasses = cx({
 			'mdl-cell mdl-cell--6-col' : this.props.image,
 			'mdl-cell mdl-cell--12-col center-text' : !this.props.image

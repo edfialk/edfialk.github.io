@@ -11,13 +11,6 @@ import babelify from 'babelify';
 
 const $ = gulpLoadPlugins();
 
-// Lint JavaScript
-gulp.task('lint', () =>
-  gulp.src('app/build/scripts/*.js')
-    .pipe($.eslint())
-    .pipe($.eslint.format())
-);
-
 // Optimize images
 gulp.task('images', () =>
   gulp.src('app/images/**/*')
@@ -27,18 +20,6 @@ gulp.task('images', () =>
     })))
     .pipe(gulp.dest('dist/images'))
     .pipe($.size({title: 'images'}))
-);
-
-// Copy all files at the root level (app)
-gulp.task('copy', () =>
-  gulp.src([
-    'app/*',
-    '!app/*.html',
-    'node_modules/apache-server-configs/dist/.htaccess'
-  ], {
-    dot: true
-  }).pipe(gulp.dest('dist'))
-    .pipe($.size({title: 'copy'}))
 );
 
 // Compile and automatically prefix stylesheets
@@ -64,10 +45,10 @@ gulp.task('styles', () => {
     .pipe($.sass({
       precision: 10
     }).on('error', $.sass.logError))
-    // .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
+    .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
     .pipe(gulp.dest('.tmp/styles'))
     // Concatenate and minify styles
-    // .pipe($.if('*.css', $.cssnano()))
+    .pipe($.if('*.css', $.cssnano()))
     .pipe($.size({title: 'styles'}))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('dist/styles'));

@@ -15,7 +15,7 @@ const history = createHashHistory({queryKey: false})
 
 const App = React.createClass({
   getInitialState() {
-    return { didAnimation: true };
+    return { didAnimation: false };
   },
   componentDidUpdate() {
     this.state.didAnimation = true;

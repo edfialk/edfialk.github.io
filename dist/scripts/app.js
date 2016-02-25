@@ -92,7 +92,7 @@ var history = (0, _createHashHistory2.default)({ queryKey: false });
 
 var App = _react2.default.createClass({ displayName: 'App', 
   getInitialState: function getInitialState() {
-    return { didAnimation: true };}, 
+    return { didAnimation: false };}, 
 
   componentDidUpdate: function componentDidUpdate() {
     this.state.didAnimation = true;}, 

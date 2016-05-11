@@ -7,9 +7,11 @@ import createHashHistory from 'history/lib/createHashHistory';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Index from './index.jsx';
 import Kloj from './pages/kloj.jsx';
-import Contact from './pages/contactmyreps.jsx';
+import ContactMyReps from './pages/contactmyreps.jsx';
 import PapaSquat from './pages/papa.jsx';
 import ACP from './pages/acp.jsx';
+import Contact from './pages/contact.jsx';
+import Thanks from './pages/thanks.jsx';
 
 const history = createHashHistory({queryKey: false})
 
@@ -44,9 +46,11 @@ render((
     <Route path="/" component={App}>
       <IndexRoute component={Index}/>
       <Route path="kloj" component={Kloj}/>
-      <Route path="contactmyreps" component={Contact}/>
+      <Route path="contactmyreps" component={ContactMyReps}/>
       <Route path="papasquat" component={PapaSquat}/>
       <Route path="acp" component={ACP}/>
+      <Route path="contact" component={Contact}/>
+      <Route path="thanks" component={Thanks}/>
     </Route>
   </Router>
 ), document.getElementById('react'));

@@ -54,8 +54,6 @@
 
 .grayscale {
   transition: 1s;
-  -webkit-filter: grayscale(100%);
+  -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
   filter: grayscale(100%);
-  filter: url(#greyscale);
-  filter: gray;
 }

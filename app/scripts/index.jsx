@@ -14,8 +14,6 @@ module.exports = React.createClass({
 		$('.main').animate({ scrollTop: 0}, 'slow');
 	},
 	componentDidMount: function() {
-	    // $('.content').css('min-height', $('.content').height());
-
 		if (this.state.didAnimation)
 			return;
 
@@ -27,26 +25,22 @@ module.exports = React.createClass({
 		var $profile = $('.profile', dom);
 		window.setTimeout(function(){
 			$money.addClass('fadeToBlack').removeClass('highlight');
-			$contact.addClass('fadeIn');
+			$contact.addClass('fadeInLeft');
 		}, 1000);
 		window.setTimeout(function(){
-			$print.addClass('bigtada highlight');
+			$profile.addClass('fadeIn');
 		}, 1500);
 		window.setTimeout(function(){
-			$print.addClass('fadeToBlack').removeClass('highlight');
-			$('.intro', dom).addClass('fadeInUp');
-		}, 3500);
+			$('.intro', dom).addClass('fadeInDown');
+		}, 2000);
 		window.setTimeout(function(){
-			$profile.addClass('fadeIn');
-			$('.cv', dom).addClass('fadeIn');
 			$('.current', dom).addClass('fadeIn');
-		}, 4000);
-		window.setTimeout(function(){
-			$profile.addClass('grayscale');
-		}, 5000);
+			$('.cv', dom).addClass('fadeIn');
+			// $profile.addClass('grayscale');
+		}, 3000);
 	},
 	handleMoneyClick() {
-		//go to money page
+		// window.location
 	},
 	render: function() {
 	    return (
@@ -55,9 +49,8 @@ module.exports = React.createClass({
 	          <div className="header-info mdl-cell mdl-cell--12-col">
 					<p className="mdl-typography--display-2">Ed Fialkowski</p>
 					<p className="mdl-typography--headline">Full Stack Web Developer</p>
-					<p id="moneyplz" className={"mdl-typography--title moneyplz noprint animated clickable " + ( !this.props.didAnimation ? 'highlight' : '' )}
-						onClick={this.handleMoneyClick}>
-						seeking full and part-time work
+					<p id="moneyplz" className={"mdl-typography--title moneyplz noprint animated clickable " + ( !this.props.didAnimation ? 'highlight' : '' )}>
+						<Link to="/contact" style={{ color: 'inherit' }}>seeking full and part-time work</Link>
 					</p>
 	          		<p className="onlyprint mdl-typography--title">edfialk.com - edfialk@gmail.com</p>
 	          </div>

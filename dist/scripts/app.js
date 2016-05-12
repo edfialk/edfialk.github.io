@@ -20,11 +20,16 @@ module.exports = React.createClass({ displayName: 'exports',
 },{"react":223}],2:[function(require,module,exports){
 'use strict';var React = require('react');
 var Link = require('react-router').Link;
+var CX = require('classnames');
 
 module.exports = React.createClass({ displayName: 'exports', 
 	render: function render() {
+		var classes = CX({ 
+			'mdl-cell mdl-cell--2-col-phone mdl-cell--1-offset-phone mdl-cell--2-col-tablet mdl-cell--4-col-desktop': true, 
+			'mdl-cell--1-offset-tablet': this.props.first });
+
 		return (
-			React.createElement('div', { className: 'mdl-cell mdl-cell--12-phone' }, 
+			React.createElement('div', { className: classes }, 
 			React.createElement(Link, { to: this.props.link }, 
 			React.createElement('img', { src: this.props.image }), 
 			React.createElement('div', { className: 'caption' }, 
@@ -33,7 +38,7 @@ module.exports = React.createClass({ displayName: 'exports',
 			React.createElement('h6', null, this.props.tag), 
 			React.createElement('p', null, this.props.stack))))));} });
 
-},{"react":223,"react-router":85}],3:[function(require,module,exports){
+},{"classnames":13,"react":223,"react-router":85}],3:[function(require,module,exports){
 'use strict';var React = require('react');
 var cx = require('classnames');
 
@@ -167,7 +172,7 @@ module.exports = React.createClass({ displayName: 'exports',
       React.createElement('ul', { className: 'mdl-mega-footer--link-list' }, 
       React.createElement('li', null, React.createElement('a', { href: 'https://github.com/edfialk' }, React.createElement('i', { className: 'fa fa-github' }), 'Github')), 
       React.createElement('li', null, React.createElement('a', { href: 'https://bitbucket.org/edfialk' }, React.createElement('i', { className: 'fa fa-bitbucket' }), 'Bitbucket')), 
-      React.createElement('li', null, React.createElement('a', { href: '#' }, React.createElement('i', { className: 'fa fa-rss' }), 'Blog')), 
+
       React.createElement('li', null, React.createElement('a', { href: 'https://www.flickr.com/people/69354818@N08/' }, React.createElement('i', { className: 'fa fa-flickr' }), 'Flickr')))), 
 
 
@@ -261,14 +266,15 @@ module.exports = React.createClass({ displayName: 'exports',
 
 
 			React.createElement('section', { className: 'mdl-grid intro animated', style: this.state.didAnimation ? { opacity: 1 } : {} }, 
-			React.createElement('div', { className: 'mdl-cell mdl-cell--1-offset mdl-cell--10-col mdl-typography--text-large' }, 'I enjoy building everything from landing pages to rich interactive web apps. I have a diverse set of skills on both back-end and front-end, including ES6, LAMP, MEAN, Relational DB, Laravel, Vue, Backbone, React, Flux (Alt), Meteor, Drupal modules and themes, SQL, and Linux server administration. I\'m fluent in working with API\'s, Responsive Design, OOP, design structures, Agile development, page speed, and working remotely. Vue is currently my favorite front-end. I have worked a lot in Laravel, but I\'m becoming more fond of node servers. With the right design, I can make anything.')), 
+			React.createElement('div', { className: 'mdl-cell mdl-cell--1-offset-desktop mdl-cell--10-col mdl-typography--text-large' }, 'I enjoy building everything from landing pages to rich interactive web apps. I have a diverse set of skills on both back-end and front-end, including ES6, LAMP, MEAN, Relational DB, Laravel, Vue, Backbone, React, Flux (Alt), Meteor, Drupal modules and themes, SQL, and Linux server administration. I\'m fluent in working with API\'s, Responsive Design, OOP, design structures, Agile development, page speed, and working remotely. Vue is currently my favorite front-end. I have worked a lot in Laravel, but I\'m becoming more fond of node servers. With the right design, I can make anything.')), 
 
 
 
 			React.createElement('section', { className: 'mdl-grid current animated noprint', style: this.state.didAnimation ? { opacity: 1 } : { opacity: 0 } }, 
 			React.createElement(Project, { title: 'Kloj.net', link: '/kloj', image: '/images/kloj/logo.png', 
 				tag: 'Aesthetic Feed Reader and Link Sharing', 
-				stack: 'Laravel, Backbone' }), 
+				stack: 'Laravel, Backbone', 
+				first: 'true' }), 
 
 			React.createElement(Project, { title: 'ContactMyReps.org', link: '/contactmyreps', image: '/images/contactmyreps/logo.jpg', 
 				tag: 'Combining public API\'s and geolocation to faciliate dialogue with government representatives', 

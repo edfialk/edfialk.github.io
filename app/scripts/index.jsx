@@ -69,7 +69,7 @@ module.exports = React.createClass({
 	          </div>
 	        </header>
 	        <section className="mdl-grid intro animated" style={ this.state.didAnimation ? {opacity: 1} : {} }>
-	          <div className="mdl-cell mdl-cell--1-offset mdl-cell--10-col mdl-typography--text-large">
+	          <div className="mdl-cell mdl-cell--1-offset-desktop mdl-cell--10-col mdl-typography--text-large">
 	            I enjoy building everything from landing pages to rich interactive web apps. I have a diverse set of skills on both back-end and front-end, including ES6, LAMP, MEAN, Relational DB, Laravel, Vue, Backbone, React, Flux (Alt), Meteor, Drupal modules and themes, SQL, and Linux server administration. I'm fluent in working with API's, Responsive Design, OOP, design structures, Agile development, page speed, and working remotely. Vue is currently my favorite front-end. I have worked a lot in Laravel, but I'm becoming more fond of node servers. With the right design, I can make anything.
 	          </div>
 	        </section>
@@ -77,6 +77,7 @@ module.exports = React.createClass({
 	        	<Project title="Kloj.net" link="/kloj" image="/images/kloj/logo.png"
 	        		tag="Aesthetic Feed Reader and Link Sharing"
 	        		stack="Laravel, Backbone"
+	        		first="true"
 	        	/>
 	        	<Project title="ContactMyReps.org" link="/contactmyreps" image="/images/contactmyreps/logo.jpg"
 	        		tag="Combining public API's and geolocation to faciliate dialogue with government representatives"

@@ -23,7 +23,7 @@ module.exports = React.createClass({
             <ul className="mdl-mega-footer--link-list">
               <li><a href="https://github.com/edfialk"><i className="fa fa-github" />Github</a></li>
               <li><a href="https://bitbucket.org/edfialk"><i className="fa fa-bitbucket" />Bitbucket</a></li>
-              <li><a href="#"><i className="fa fa-rss" />Blog</a></li>
+              {/* <li><a href="#"><i className="fa fa-rss" />Blog</a></li> */}
               <li><a href="https://www.flickr.com/people/69354818@N08/"><i className="fa fa-flickr" />Flickr</a></li>
             </ul>
           </div>

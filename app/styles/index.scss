@@ -74,6 +74,17 @@
 	&:hover .caption {
 		opacity: 1;
 	}
+  @media (max-width: 960px) and (min-width: 480px) {
+    h6 {
+      display: none;
+    }
+    h4 {
+      font-size: 16px;
+    }
+    p {
+      font-size: 12px;
+    }
+  }
 }
 .project {
 	overflow: hidden;

@@ -15,7 +15,7 @@
     $body.toggleClass('modal-active');
   });
   $d.on('click', '.modal-overlay', function(e) {
-    if (e.target.classList.contains('modal-overlay')){
+    if (e.target.classList.contains('modal-overlay')) {
       $body.removeClass('modal-active');
     }
   });

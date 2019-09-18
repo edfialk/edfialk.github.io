@@ -31,7 +31,7 @@ importScripts("scripts/sw/sw-toolbox.js","scripts/sw/runtime-caching.js");
 
 
 /* eslint-disable quotes, comma-spacing */
-var PrecacheConfig = [["images/Webp.net-resizeimage.png","dced7702d94cbf4203939f6437ad319e"],["images/brick-min.jpg","bf1acc3c8a97bb68d9ade6091c6ca563"],["images/business-min.jpg","63c3383c804bea41c114a335a8021eb4"],["images/business.jpg","45bde9edf6af3d4e5cc4db2c2bbeef6d"],["images/contact-laptop-mockup-min.png","035ce97085792670909fb333ef0ad65e"],["images/contact-laptop-mockup.png","2158e2cc8fb3c13c7d6aebd1654209ea"],["images/hamburger.svg","d2cb0dda3e8313b990e8dcf5e25d2d0f"],["images/kloj-brick-laptop-mockup.png","39fe74d3a668415b9287130b05cbe636"],["images/kloj-grid-laptop-mockup-min.png","3787f88146a119a601255b572c6c24d7"],["images/kloj-grid-laptop-mockup.png","f80e0a65fd95fc0cc87e859e27121ab5"],["images/kloj-laptop-mockup.png","eb1571c3851b90d49d1ade0a1d1c29c1"],["images/marketing-tablet-opt.png","3a4248a64170bb0ec8f03cfb66d56718"],["images/marketing.png","03c6b00a2dee9ec3cd96d84bf0441afa"],["images/marketing_macbook_opt.png","032a142128bedffcbe436513331f8695"],["images/ng-logo.svg","eefdf990d7fce31abc52346129635725"],["images/papa_mobile_map-opt.jpg","6afd4c3091c124943aa93ab779289edc"],["images/policy-ss1-macbookpro-opt.png","0232f5bb6c4a64d54def917ae1a2f8f2"],["images/profile-min.png","b58c8aa5fb8273cc58ce9bc29f697d57"],["images/profile.png","9315351099a17ba7e467094f42edc15c"],["images/touch/apple-touch-icon.png","7326f54bfe6776293f08b34c3a5fde7b"],["images/touch/chrome-touch-icon-192x192.png","571f134f59f14a6d298ddd66c015b293"],["images/touch/icon-128x128.png","7c46d686765c49b813ac5eb34fabf712"],["images/touch/ms-touch-icon-144x144-precomposed.png","452d90b250d6f41a0c8f9db729113ffd"],["images/wustl.png","6759d57030a88622b384e465c9d1e4c4"],["images/wustllogo.svg","fd6a17d167580f05225d2f737ee9937d"],["index.html","618afb839e61984f2182a2a4603aedab"],["manifest.json","66e45df1f96017ee0b6816dc0cba5b31"],["resume.html","c0b2512721be063b1226f7026fd6b597"],["scripts/main.min.js","788e906057b03eb7e55c10236642e159"],["scripts/sw/runtime-caching.js","e3e34dcb62b5d62453b9215961585488"],["scripts/sw/sw-toolbox.js","2770efb889cc10c4de88d0b746c2a13c"],["styles/main.css","0538173d4bff9d0d69b16abab055fbb4"],["styles/reset.css","a8a8186020ad51d461bcee0327d50476"]];
+var PrecacheConfig = [["images/Webp.net-resizeimage.png","29d0727c04d12ec1022818601183acdf"],["images/brick-min.jpg","31f94be35b68711ce32c374af7b4897d"],["images/business-min.jpg","893e88a1f27eda35abbb6fa342299fac"],["images/business.jpg","c03e15a01947fffc3a2d81fa9239d6cc"],["images/contact-laptop-mockup-min.png","036d208874fc321b49109b553bffc985"],["images/contact-laptop-mockup.png","08128dcc7a3fd0084c96118684cf30fa"],["images/hamburger.svg","d2cb0dda3e8313b990e8dcf5e25d2d0f"],["images/kloj-brick-laptop-mockup.png","39fe74d3a668415b9287130b05cbe636"],["images/kloj-grid-laptop-mockup-min.png","51c35c9f70d5ff610658a576621fe903"],["images/kloj-grid-laptop-mockup.png","f80e0a65fd95fc0cc87e859e27121ab5"],["images/kloj-laptop-mockup.png","b2aa45c0b0f8070194683bfd82c20534"],["images/marketing-tablet-opt.png","3a4248a64170bb0ec8f03cfb66d56718"],["images/marketing.png","d15aa5862c416a4503ad1ac743732e4a"],["images/marketing_macbook_opt.png","bf9fd4ab2af948b298a34f3de2f79f2a"],["images/ng-logo.svg","52266629ec1220cc1a4afc176376c047"],["images/papa_mobile_map-opt.jpg","9341350bcfaf1a732cab831c0559fa5b"],["images/policy-ss1-macbookpro-opt.png","8482476ae72c58ece48c019792f28b14"],["images/profile-min.png","b58c8aa5fb8273cc58ce9bc29f697d57"],["images/profile.png","f363d4f6d790520fa468e0bb93c5e61b"],["images/touch/apple-touch-icon.png","7326f54bfe6776293f08b34c3a5fde7b"],["images/touch/chrome-touch-icon-192x192.png","571f134f59f14a6d298ddd66c015b293"],["images/touch/icon-128x128.png","7c46d686765c49b813ac5eb34fabf712"],["images/touch/ms-touch-icon-144x144-precomposed.png","452d90b250d6f41a0c8f9db729113ffd"],["images/wustl.png","094eff3f717a8a1c8a91c982da4a3aff"],["images/wustllogo.svg","8c144af941276e017b2897d65b72f4fa"],["index.html","a0a6e5ebec3abecf91b64ac2d10ae1d5"],["manifest.json","66e45df1f96017ee0b6816dc0cba5b31"],["resume.html","c0b2512721be063b1226f7026fd6b597"],["scripts/main.min.js","788e906057b03eb7e55c10236642e159"],["scripts/sw/runtime-caching.js","e3e34dcb62b5d62453b9215961585488"],["scripts/sw/sw-toolbox.js","2770efb889cc10c4de88d0b746c2a13c"],["styles/main.css","0538173d4bff9d0d69b16abab055fbb4"],["styles/reset.css","a8a8186020ad51d461bcee0327d50476"]];
 /* eslint-enable quotes, comma-spacing */
 var CacheNamePrefix = 'sw-precache-v1-web-starter-kit-' + (self.registration ? self.registration.scope : '') + '-';
 
@@ -40,7 +40,7 @@ var IgnoreUrlParametersMatching = [/^utm_/];
 
 
 
-var addDirectoryIndex = function (originalUrl, index) {
+var addDirectoryIndex = function(originalUrl, index) {
     var url = new URL(originalUrl);
     if (url.pathname.slice(-1) === '/') {
       url.pathname += index;
@@ -48,7 +48,7 @@ var addDirectoryIndex = function (originalUrl, index) {
     return url.toString();
   };
 
-var getCacheBustedUrl = function (url, param) {
+var getCacheBustedUrl = function(url, param) {
     param = param || Date.now();
 
     var urlWithCacheBusting = new URL(url);
@@ -58,7 +58,7 @@ var getCacheBustedUrl = function (url, param) {
     return urlWithCacheBusting.toString();
   };
 
-var isPathWhitelisted = function (whitelist, absoluteUrlString) {
+var isPathWhitelisted = function(whitelist, absoluteUrlString) {
     // If the whitelist is empty, then consider all URLs to be whitelisted.
     if (whitelist.length === 0) {
       return true;
@@ -71,7 +71,7 @@ var isPathWhitelisted = function (whitelist, absoluteUrlString) {
     });
   };
 
-var populateCurrentCacheNames = function (precacheConfig,
+var populateCurrentCacheNames = function(precacheConfig,
     cacheNamePrefix, baseUrl) {
     var absoluteUrlToCacheName = {};
     var currentCacheNamesToAbsoluteUrl = {};
@@ -89,7 +89,7 @@ var populateCurrentCacheNames = function (precacheConfig,
     };
   };
 
-var stripIgnoredUrlParameters = function (originalUrl,
+var stripIgnoredUrlParameters = function(originalUrl,
     ignoreUrlParametersMatching) {
     var url = new URL(originalUrl);
 
